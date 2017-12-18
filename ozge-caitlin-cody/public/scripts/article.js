@@ -43,18 +43,25 @@ var app = app || {};
   };
 
   Article.numWordsAll = () => {
-    var numWords = Article.all.map().reduce();
-    return numWords;
+    return Article.all.map(articleObject => articleObject.body.split('').length).reduce((acc,curr) => acc + curr);
   };
 
   Article.allAuthors = () => {
-    var authors =  Article.all.map().reduce();
-    return authors;
+    return Article.all.map(articleObject => articleObject.author).reduce((acc, curr) => {
+      if (!acc.includes(curr)){
+        acc.push(curr)
+      }
+      return acc
+    },[]);
   };
 
   Article.numWordsByAuthor = () => {
-    var numWordsAuthor = Article.allAuthors().map(author => {});
-    return numWordsAuthor;
+    return Article.allAuthors().map(author => {
+      return {
+        name: author,
+        words: Article.all.filter(ele => ele.author === author).map(ele => ele.body.split('').length).reduce((acc,curr) => acc + curr)
+      }
+    });
   };
 
   Article.truncateTable = callback => {
