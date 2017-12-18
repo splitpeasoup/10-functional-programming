@@ -13,9 +13,9 @@
     <script class = "author-stats" type="text/x-handlebars-template">
       <h2>Author Stats</h2>
       <dt>Author names</dt><dd>{{authors}}</dd>
-      <dt>Total words:</dt> <dd>{{numWords}}</dd>
+      <dt>Total words:</dt> <dd>{{numWordsAll}}</dd>
 
-      <p><em>Details on who is {{authors}}, and how much writing they are doing {{numWordsAuthor}}.</em></p>
+      <p><em>Details on who is {{numWordsByAuthor}}, and how much writing they are doing {{numWordsAll}}.</em></p>
       <ul class="author-stats">
     </script>
   </head>
@@ -53,10 +53,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="scripts/article.js"></script>
-    <script src="scripts/articleView.js"></script>
+    <script src="/scripts/article.js"></script>
+    <script src="/scripts/articleView.js"></script>
     <script>
-      app.Article.fetchAll(app.articleView.initAdminPage);
+      Article.fetchAll();
     </script>
   </body>
 </html>
