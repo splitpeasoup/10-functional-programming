@@ -43,15 +43,18 @@ var app = app || {};
   };
 
   Article.numWordsAll = () => {
-    return Article.all.map().reduce()
+    var numWords = Article.all.map().reduce();
+    return numWords;
   };
 
   Article.allAuthors = () => {
-    return Article.all.map().reduce();
+    var authors =  Article.all.map().reduce();
+    return authors;
   };
 
   Article.numWordsByAuthor = () => {
-    return Article.allAuthors().map(author => {})
+    var numWordsAuthor = Article.allAuthors().map(author => {});
+    return numWordsAuthor;
   };
 
   Article.truncateTable = callback => {
